@@ -132,5 +132,12 @@ namespace Alexa.NET.StateManagement.S3
                 await S3Client.PutObjectAsync(putRequest);
             }
         }
+
+        public bool Remove(SkillRequest request)
+        {
+            var s3Key = GetS3Key(request);
+            var removed = Local.TryRemove(s3Key, out Dictionary<string, object> values);
+            return removed || values == null;
+        }
     }
 }

@@ -6,7 +6,7 @@
     <Authors>Steven Pears</Authors>
     <Description>Small library, working with Alexa.NET.StateManagement, to help store store in an S3 bucket per user id</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>initial structure</PackageReleaseNotes>
+    <PackageReleaseNotes>Add remove method so longer lived stores can clean up after saving requests</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
