@@ -100,6 +100,24 @@ namespace Alexa.NET.StateManagement.S3.Tests
         }
 
         [Fact]
+        public async Task RemoveWorksWithNoKeys()
+        {
+            var mock = Substitute.For<IAmazonS3>();
+            mock.DoesS3BucketExistAsync("xxx").Returns(true);
+            mock
+                .GetObjectAsync(string.Empty, string.Empty)
+                .ReturnsForAnyArgs(c => new GetObjectResponse { HttpStatusCode = HttpStatusCode.NotFound });
+
+            var store = new S3PersistenceStore("xxx",mock);
+            await store.Set(DummyRequest(), "test", "value");
+            var result1 = store.Remove(DummyRequest());
+            var result2 = store.Remove(DummyRequest());
+
+            Assert.True(result1);
+            Assert.True(result2);
+        }
+
+        [Fact]
         public async Task SetTwiceDoesSingleCheck()
         {
             var mock = Substitute.For<IAmazonS3>();
