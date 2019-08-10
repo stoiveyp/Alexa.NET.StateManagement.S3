@@ -6,7 +6,7 @@
     <Description>Small library, working with Alexa.NET.StateManagement, to help store store in an S3 bucket per user id</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>Update to netstandard2.0</PackageReleaseNotes>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <PackageId>Alexa.NET.StateManagement.S3</PackageId>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
