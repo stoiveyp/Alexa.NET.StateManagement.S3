@@ -1,19 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Steven Pears</Authors>
     <Description>Small library, working with Alexa.NET.StateManagement, to help store store in an S3 bucket per user id</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>Add remove method so longer lived stores can clean up after saving requests</PackageReleaseNotes>
-    <Version>1.0.0</Version>
+    <PackageReleaseNotes>Update to netstandard2.0</PackageReleaseNotes>
+    <Version>1.1.0</Version>
     <PackageId>Alexa.NET.StateManagement.S3</PackageId>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Alexa.NET.StateManagement" Version="2.0.0" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.24.3" />
+    <PackageReference Include="Alexa.NET.StateManagement" Version="2.1.0" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.104.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
